@@ -1,54 +1,24 @@
-# Incident 002 - MySQL Service Down
+# Incident 003 - Linux Disk Full
 
 ## Overview
 
-Environment: Ubuntu 22.04
+Environment: CentOS 7
 
-Service: MySQL 8.0
-
-Severity: High
+Severity: Medium
 
 ---
 
 ## Incident Description
 
-业务系统无法登录。
+监控系统告警：
 
-应用报错：
-
-Database Connection Failed
+Disk Usage > 95%
 
 ---
 
 ## Investigation
 
-检查服务状态：
-
-```bash
-systemctl status mysql
-```
-
-结果：
-
-```text
-failed
-```
-
-查看日志：
-
-```bash
-journalctl -u mysql -n 50
-```
-
-发现：
-
-```text
-No space left on device
-```
-
----
-
-检查磁盘：
+查看磁盘：
 
 ```bash
 df -h
@@ -57,65 +27,83 @@ df -h
 结果：
 
 ```text
-/dev/sda1 100%
+/ 98%
 ```
 
-磁盘已满。
+定位目录：
+
+```bash
+du -sh /* | sort -hr
+```
+
+发现：
+
+```text
+/var/log 15G
+```
+
+继续分析：
+
+```bash
+find /var/log -type f -size +100M
+```
+
+发现：
+
+```text
+access.log 8G
+```
 
 ---
 
 ## Root Cause
 
-MySQL Binlog长期未清理。
+日志切割配置失效。
 
-累计占用大量空间。
+Nginx日志持续增长。
 
-导致服务启动失败。
+最终占满磁盘空间。
 
 ---
 
 ## Resolution
 
-查看Binlog：
+压缩日志：
 
 ```bash
-ls -lh /var/lib/mysql
+gzip access.log
 ```
 
-清理历史日志：
-
-```sql
-PURGE BINARY LOGS BEFORE DATE(NOW() - INTERVAL 7 DAY);
-```
-
-重启服务：
+删除历史日志：
 
 ```bash
-systemctl restart mysql
+find /var/log -name "*.gz" -mtime +30 -delete
+```
+
+执行logrotate：
+
+```bash
+logrotate -f /etc/logrotate.conf
 ```
 
 ---
 
 ## Preventive Actions
 
-配置Binlog自动过期：
+配置Logrotate。
 
-```ini
-expire_logs_days=7
-```
+增加磁盘告警阈值。
 
-增加磁盘容量告警。
-
-增加MySQL健康检查。
+建立日志保留策略。
 
 ---
 
 ## Lessons Learned
 
-磁盘满是数据库故障的常见原因。
+日志增长是Linux最常见磁盘问题之一。
 
-需要持续监控：
+需要：
 
-* 磁盘使用率
-* Binlog增长速度
-* 数据目录容量
+* 定期检查
+* 自动切割
+* 自动清理
