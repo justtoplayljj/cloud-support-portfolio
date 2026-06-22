@@ -1,4 +1,4 @@
-# Incident 003 - Linux Disk Full
+# Incident 002 - Linux Disk Full
 
 ## Overview
 
