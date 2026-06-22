@@ -27,7 +27,7 @@
 
 ### Operating System
 
-* Linux (Ubuntu / CentOS / Rocky Linux)
+* Linux (Ubuntu / CentOS)
 
 ### Web & Middleware
 
