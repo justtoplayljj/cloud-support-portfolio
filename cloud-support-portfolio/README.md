@@ -72,7 +72,7 @@ Web Platform Architecture
 
 ## Incident Response Cases
 
-### Incident 001 - Nginx 502 Bad Gateway
+### Incident 003 - Nginx 502 Bad Gateway
 
 Scenario
 
@@ -88,11 +88,11 @@ Skills Demonstrated
 
 File:
 
-incidents/incident-001-nginx-502.md
+[incidents/003-nginx-502.md](incidents/003-nginx-502.md)
 
 ---
 
-### Incident 002 - MySQL Service Down
+### Planned - MySQL Service Down
 
 Scenario
 
@@ -107,11 +107,11 @@ Skills Demonstrated
 
 File:
 
-incidents/incident-002-mysql-down.md
+Status: Planned
 
 ---
 
-### Incident 003 - Linux Disk Full
+### Incident 002 - Linux Disk Full
 
 Scenario
 
@@ -125,7 +125,7 @@ Skills Demonstrated
 
 File:
 
-incidents/incident-003-disk-full.md
+[incidents/002-disk-full.md](incidents/002-disk-full.md)
 
 ---
 
@@ -135,15 +135,15 @@ Standard Operating Procedures (SOP)
 
 ### Nginx Restart Procedure
 
-runbooks/nginx-restart.md
+[runbooks/nginx-restart.md](runbooks/nginx-restart.md)
 
 ### MySQL Backup Procedure
 
-runbooks/mysql-backup.md
+[runbooks/mysql-backup.md](runbooks/mysql-backup.md)
 
 ### Docker Troubleshooting Guide
 
-runbooks/docker-troubleshooting.md
+Status: Planned
 
 ---
 
@@ -176,9 +176,9 @@ Monitored Metrics
 
 Files
 
-monitoring/prometheus-overview.md
+Planned: monitoring/prometheus-overview.md
 
-monitoring/grafana-dashboard.md
+Planned: monitoring/grafana-dashboard.md
 
 ---
 
@@ -195,7 +195,7 @@ Functions
 
 File
 
-automation/health-check.sh
+[automation/healthcheck.sh](automation/healthcheck.sh)
 
 ---
 
@@ -209,7 +209,7 @@ Functions
 
 File
 
-automation/backup.sh
+[automation/backup.sh](automation/backup.sh)
 
 ---
 

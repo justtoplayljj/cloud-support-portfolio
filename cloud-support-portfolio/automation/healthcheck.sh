@@ -1,18 +1,12 @@
-#!/bin/bash
-
-# ==================================
-
+#!/usr/bin/env bash
 # Server Health Check Script
-
-# ==================================
-
-DATE=$(date "+%F %T")
-HOSTNAME=$(hostname)
+REPORT_TIME=$(date "+%F %T")
+HOST_NAME=$(hostname)
 
 echo "================================="
 echo "Server Health Check Report"
-echo "Host: $HOSTNAME"
-echo "Time: $DATE"
+echo "Host: ${HOST_NAME}"
+echo "Time: ${REPORT_TIME}"
 echo "================================="
 
 echo
