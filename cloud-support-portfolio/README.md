@@ -72,6 +72,12 @@ Web Platform Architecture
 
 ## Incident Response Cases
 
+### Incident 001 - Linux High CPU
+
+[incidents/001-high-cpu.md](incidents/001-high-cpu.md)
+
+---
+
 ### Incident 003 - Nginx 502 Bad Gateway
 
 Scenario
@@ -129,6 +135,36 @@ File:
 
 ---
 
+### Incident 004 - DNS Resolution Failure
+
+[incidents/004-dns-failure.md](incidents/004-dns-failure.md)
+
+### Incident 005 - TLS Certificate Expired
+
+[incidents/005-cert-expired.md](incidents/005-cert-expired.md)
+
+### Incident 006 - Docker Container Crash
+
+[incidents/006-container-crash.md](incidents/006-container-crash.md)
+
+### Incident 007 - Application Memory Leak
+
+[incidents/007-memory-leak.md](incidents/007-memory-leak.md)
+
+### Incident 008 - Kubernetes Node NotReady
+
+[incidents/008-node-down.md](incidents/008-node-down.md)
+
+### Incident 009 - Kubernetes Pod CrashLoopBackOff
+
+[incidents/009-pod-crashloop.md](incidents/009-pod-crashloop.md)
+
+### Incident 010 - Kubernetes Ingress Failure
+
+[incidents/010-ingress-failure.md](incidents/010-ingress-failure.md)
+
+---
+
 ## Runbooks
 
 Standard Operating Procedures (SOP)
@@ -140,6 +176,15 @@ Standard Operating Procedures (SOP)
 ### MySQL Backup Procedure
 
 [runbooks/mysql-backup.md](runbooks/mysql-backup.md)
+
+### Troubleshooting Runbooks
+
+* [CPU Troubleshooting](runbooks/cpu-troubleshooting.md)
+* [Disk Troubleshooting](runbooks/disk-troubleshooting.md)
+* [DNS Troubleshooting](runbooks/dns-troubleshooting.md)
+* [Kubernetes Pod Troubleshooting](runbooks/k8s-pod-troubleshooting.md)
+* [Network Troubleshooting](runbooks/network-troubleshooting.md)
+* [SSL/TLS Troubleshooting](runbooks/ssl-troubleshooting.md)
 
 ### Docker Troubleshooting Guide
 
@@ -210,6 +255,12 @@ Functions
 File
 
 [automation/backup.sh](automation/backup.sh)
+
+### Additional Automation
+
+* [Docker Cleanup](automation/docker-cleanup.sh) — dry-run by default
+* [Log Rotation](automation/rotate-log.sh) — dry-run by default
+* [System Report](automation/system-report.sh) — read-only collection
 
 ---
 
