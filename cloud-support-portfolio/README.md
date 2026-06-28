@@ -27,23 +27,41 @@
 
 ### Operating System
 
-* Linux (Ubuntu / CentOS)
+- Ubuntu 24.04 LTS
 
-### Web & Middleware
+### Infrastructure
 
-* Nginx
-* MySQL
-* Docker
+- Docker
+- Docker Compose
+- Nginx
+- MySQL
 
-### Monitoring
+### Monitoring & Observability
 
-* Prometheus
-* Grafana
+- Prometheus
+- Grafana
+- Nginx Prometheus Exporter
+- MySQL Exporter
 
 ### Automation
 
-* Shell
-* Git
+- Bash Shell
+
+### Development Workflow
+
+- Git
+- GitHub
+- Visual Studio Code
+
+### AI Assisted Engineering
+
+- OpenAI Codex CLI
+- ChatGPT (GPT-5.5)
+
+### Documentation
+
+- Markdown
+- Draw.io
 
 ---
 
@@ -194,30 +212,44 @@ Status: Planned
 
 ## Monitoring
 
-### Infrastructure Monitoring
+构建 Prometheus + Grafana 企业运维监控平台，实现基础设施、Web 服务及数据库运行状态可视化监控。
 
-Prometheus + Grafana
+### Infrastructure Overview
 
-Monitored Metrics
+- Service Availability
+- CPU Usage
+- Memory Usage
+- Disk Utilization
+- Network Traffic
 
-* CPU Usage
-* Memory Usage
-* Disk Utilization
-* Network Traffic
+### Nginx Dashboard
 
-### Nginx Monitoring
+- Active Connections
+- Reading / Writing / Waiting Connections
+- Requests per Second
+- Accepted Connections
+- Handled Connections
+- Requests per Accepted Connection
 
-* Requests Per Second
-* Active Connections
-* HTTP Status Codes
-* Response Time
+### MySQL Dashboard
 
-### MySQL Monitoring
+- Service Availability
+- Thread Activity
+- Query Throughput (QPS)
+- SQL Command Rate
+- InnoDB Buffer Pool
+- Lock Monitoring
+- Slow Query
+- Network Throughput
 
-* QPS
-* Connections
-* Slow Queries
-* InnoDB Metrics
+### Dashboard Features
+
+- Infrastructure Overview
+- Nginx Monitoring
+- MySQL Performance
+- InnoDB Monitoring
+- Lock Monitoring
+- Slow Query Analysis
 
 Files
 
@@ -290,7 +322,30 @@ File
 * Operational Efficiency
 
 ---
+## AI-Assisted Workflow
 
+为提高项目维护效率，引入 OpenAI Codex CLI 作为辅助开发工具。
+
+主要用于：
+
+- Repository Review
+- Markdown Standardization
+- README Synchronization
+- Runbook Review
+- Incident Review
+- Git Workflow Assistance
+- Monitoring Documentation
+
+人工负责：
+
+- 架构设计
+- 环境部署
+- Dashboard 配置
+- 参数调优
+- 功能验证
+- Git Review
+
+---
 ## Certifications
 
 Certified Kubernetes Administrator (CKA)
